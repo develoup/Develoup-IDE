@@ -1,0 +1,26 @@
+{
+  "name": "my-solidjs-electron-app",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently \"npm run dev\" \"npm run electron\"",
+    "dev": "cd renderer && npm run dev",
+    "electron": "wait-on http://localhost:3000 && electron .",
+    "build": "cd renderer && npm run build",
+    "package": "electron-builder"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^24.3.0",
+    "wait-on": "^7.0.1"
+  },
+  "dependencies": {
+    "vscode": "^1.1.37",
+    "vscode-jsonrpc": "^8.2.1",
+    "vscode-languageclient": "^9.0.1",
+    "vscode-ws-jsonrpc": "^3.3.2",
+    "ws": "^8.18.0"
+  }
+}
